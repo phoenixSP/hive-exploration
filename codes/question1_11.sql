@@ -1,0 +1,1 @@
+select count(*) from flight_data_denorm;

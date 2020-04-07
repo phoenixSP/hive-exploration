@@ -1,0 +1,1 @@
+select count(distinct carrier_names) from flight_data_denorm;

@@ -1,0 +1,1 @@
+select count(*) from flight_data_denorm where airport_names[1] like "%TX%" and carrier_names like "%Virgin%";
