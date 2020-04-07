@@ -1,1 +1,1 @@
-select z.description from (selectorigin, avg(dep_delay) as delayfrom flight_data_orc2 GROUP BYorigin ORDER BY delay DESC LIMIT1) as y join( select code,description from airport_lookup)as z on z.code=y.origin;
+select z.carrier_names from (select unique_carrier,max(arr_delay) as delay from flight_data_denorm  where fl_date="2016-03-14" GROUP BY unique_carrier ORDER BY delay DESCLIMIT 1) as y join (select distinct unique_carrier, carrier_names from flight_data_denorm) as z on z.unique_carrier =y.unique carrier;
