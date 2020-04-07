@@ -1,0 +1,1 @@
+select z.AIRPORT_NAMES[0] from (select origin, avg(dep_delay) asdelay from flight_data_denormGROUP BY ORIGIN ORDER BY delayDESC LIMIT 1)as y join (selectAIRPORT_NAMES, origin fromflight_data_denorm) as z onz.origin = y.origin; 

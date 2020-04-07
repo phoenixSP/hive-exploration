@@ -1,0 +1,1 @@
+select z.description from (select UNIQUE_CARRIER, max(arr_delay) as delay from flight_data_date where fl_date=”2016-03-14” GROUP BY UNIQUE_CARRIER ORDER BY delay DESC LIMIT 1) as y join( select code,description from ?carrier_lookup)as z on z.code=y.UNIQUE_CARRIER;

@@ -1,0 +1,1 @@
+select z.description from (selectorigin, avg(dep_delay) as delayfrom flight_data_orc2 GROUP BYorigin ORDER BY delay DESC LIMIT1) as y join( select code,description from airport_lookup)as z on z.code=y.origin;
